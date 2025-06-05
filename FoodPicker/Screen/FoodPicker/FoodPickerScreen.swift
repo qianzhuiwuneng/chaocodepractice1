@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ContentView: View {
+struct FoodPickerScreen: View {
     @State private var selectedFood: Food?
     @State private var shouldshowInfo: Bool = false
     
@@ -33,7 +33,7 @@ struct ContentView: View {
                 
             }
             .padding()
-            .frame(maxWidth: .infinity, minHeight: UIScreen.main.bounds.height - 100)
+            .frame(minHeight: UIScreen.main.bounds.height - 100)
             .font(.title)
             .mainButtonStyle()
             .animation(.mySpring, value: shouldshowInfo)
@@ -44,7 +44,7 @@ struct ContentView: View {
 }
 
 // MARK: - Subviews
-private extension ContentView {
+private extension FoodPickerScreen {
     
     var foodImage: some View {
         Group {
@@ -74,7 +74,7 @@ private extension ContentView {
                 shouldshowInfo.toggle()
             } label: {
                 
-                Image(systemName: "info.circle.fill")
+                SFSymbol.info
                     .foregroundColor(.secondary)
             }.buttonStyle(.plain)
         }
@@ -107,7 +107,7 @@ private extension ContentView {
                 .transition(.moveUpWithOpacity)
             }
         }
-        .frame(maxWidth: .infinity)
+        .maxWidth()
         .clipped()
     }
     
@@ -149,7 +149,7 @@ private extension ContentView {
     
 }
     
-    extension ContentView {
+    extension FoodPickerScreen {
         init(selectedFood: Food){
             _selectedFood = State(wrappedValue: selectedFood)
         }
@@ -158,9 +158,9 @@ private extension ContentView {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView(selectedFood: .examples.first!)
-            ContentView(selectedFood: .examples.first!).previewDevice(.iPad)
-            ContentView(selectedFood: .examples.first!).previewDevice(.iPhoneSE)
+            FoodPickerScreen(selectedFood: .examples.first!)
+            FoodPickerScreen(selectedFood: .examples.first!).previewDevice(.iPad)
+            FoodPickerScreen(selectedFood: .examples.first!).previewDevice(.iPhoneSE)
         }
     }
     

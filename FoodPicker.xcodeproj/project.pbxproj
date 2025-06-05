@@ -6,13 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		49CD91F32DE026DA00EB3054 /* ShapeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD91F22DE026DA00EB3054 /* ShapeStyleView.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		49B1F5E12DD4BB7C00A27229 /* FoodPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49CD91F22DE026DA00EB3054 /* ShapeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,7 +32,6 @@
 		49B1F5D82DD4BB7C00A27229 = {
 			isa = PBXGroup;
 			children = (
-				49CD91F22DE026DA00EB3054 /* ShapeStyleView.swift */,
 				49B1F5E32DD4BB7C00A27229 /* FoodPicker */,
 				49B1F5E22DD4BB7C00A27229 /* Products */,
 			);
@@ -125,7 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49CD91F32DE026DA00EB3054 /* ShapeStyleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
