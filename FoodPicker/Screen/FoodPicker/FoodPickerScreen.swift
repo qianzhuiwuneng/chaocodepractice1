@@ -16,29 +16,32 @@ struct FoodPickerScreen: View {
     let food = Food.examples
     
     var body: some View {
-        ScrollView {
-            VStack (spacing: 30) {
-                
-                foodImage
-                
-                Text("今天吃什么？").bold()
-                
-                selectedFoodInfoView
-                
-                Spacer().layoutPriority(1)
-                
-                selectedFoodButton
-                
-                cancelButton
-                
-            }
-            .padding()
-            .frame(minHeight: UIScreen.main.bounds.height - 100)
-            .font(.title)
-            .mainButtonStyle()
-            .animation(.mySpring, value: shouldshowInfo)
-            .animation(.myEase, value: selectedFood)
-        } .background(.bg2)
+        GeometryReader { proxy in
+            ScrollView {
+                VStack (spacing: 30) {
+                    
+                    foodImage
+                    
+                    Text("今天吃什么？").bold()
+                    
+                    selectedFoodInfoView
+                    
+                    Spacer().layoutPriority(1)
+                    
+                    selectedFoodButton
+                    
+                    cancelButton
+                    
+                }
+                .padding()
+                .maxWidth()
+                .frame(minHeight: proxy.size.height)
+                .font(.title2.bold())
+                .mainButtonStyle()
+                .animation(.mySpring, value: shouldshowInfo)
+                .animation(.myEase, value: selectedFood)
+            } .background(.bg2)
+        }
     }
     
 }
